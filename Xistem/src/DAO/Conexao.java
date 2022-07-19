@@ -1,4 +1,8 @@
-package xistem.consulta;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package DAO;
 
 import java.sql.Connection;
 import javax.swing.JOptionPane;
@@ -11,7 +15,7 @@ public class Conexao {
         Connection conn = null;
         
         try {
-            String url = "jdbc:mysql://localhost:3306/testes?user=root&password=";
+            String url = "jdbc:mysql://localhost:3306/xicas?user=root&password=admin";
             conn = DriverManager.getConnection(url);
             
             
@@ -22,3 +26,4 @@ public class Conexao {
     }
     
 }
+
