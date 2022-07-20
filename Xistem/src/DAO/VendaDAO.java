@@ -61,4 +61,40 @@ public class VendaDAO {
   
     }
     
+    
+    public void excluirVenda(VendaDTO objvendadto){
+        String sql = "delete from venda where id = ?";
+        conn = new Conexao().conectaBD();
+        
+        try {
+            pstm = conn.prepareStatement(sql);
+            pstm.setInt(1, objvendadto.getId());
+            
+            pstm.execute();
+            pstm.close();
+            
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "VendaDAO Excluir " + erro);
+        }
+    }
+    
+    
+    public void alterarVenda(VendaDTO objvendadto){
+        String sql = "update venda set venda = ?, valor = ?, tipo_pag = ? where id = ?";
+        conn = new Conexao().conectaBD();
+        
+        try {
+            pstm = conn.prepareStatement(sql);
+            pstm.setString(1, objvendadto.getVenda());
+            pstm.setFloat(2, objvendadto.getValor());
+            pstm.setString(3, objvendadto.getTipoPag());
+            pstm.setInt(4, objvendadto.getId());
+            
+            pstm.execute();
+            pstm.close();
+            
+        } catch (SQLException erro) {
+        }
+    }
+    
 }
