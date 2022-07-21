@@ -61,6 +61,34 @@ public class VendaDAO {
   
     }
     
+    public ArrayList<VendaDTO> pesquisaVenda(int dia, int mes, int ano){
+        String sql = "select * from venda where YEAR(data_hora) = ? and MONTH(data_hora) = ? and DAY(data_hora) = ?";
+        conn = new Conexao().conectaBD();
+        
+        try{
+            pstm = conn.prepareStatement(sql);
+            pstm.setInt(1,ano);
+            pstm.setInt(2, mes);
+            pstm.setInt(3, dia);
+            rs = pstm.executeQuery();
+           
+        
+            while(rs.next()){
+                VendaDTO objvendadto = new VendaDTO();
+                objvendadto.setId(rs.getInt("id"));
+                objvendadto.setDataHora(rs.getString("data_hora"));
+                objvendadto.setVenda(rs.getString("venda"));
+                objvendadto.setValor(rs.getFloat("valor"));
+                objvendadto.setTipoPag(rs.getString("tipo_pag"));
+                
+                lista.add(objvendadto);
+            }
+        }catch(SQLException erro){ 
+            JOptionPane.showMessageDialog(null, "VendaDAO PesquisarVendaHj "+ erro);
+        }
+        return lista;
+    }
+    
     
     public void excluirVenda(VendaDTO objvendadto){
         String sql = "delete from venda where id = ?";
