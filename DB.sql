@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS venda(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    data_hora DATETIME DEFAULT NOW() 
+    venda VARCHAR(250),
+    valor FLOAT,
+    tipo_pag VARCHAR(15));
+	
+CREATE TABLE IF NOT EXISTS lembrete(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    data_hora DATETIME DEFAULT NOW(),
+    titulo VARCHAR(60),
+    texto TEXT);
+    
+CREATE TABLE IF NOT EXISTS anotacao(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    data_hora DATETIME DEFAULT NOW(),
+    titulo VARCHAR(60),
+    texto TEXT);
