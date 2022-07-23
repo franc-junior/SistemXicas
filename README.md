@@ -12,9 +12,9 @@
   - [x] Apresentar vendas em uma tabela
   - [x] Editar dados das vendas
   - [x] Excluir vendas
-  - [ ] Quantidade de vendas
-  - [ ] Total acumulado
-  - [ ] Media de vendas
+  - [x] Quantidade de vendas
+  - [x] Total acumulado
+  - [x] Media de vendas
   - [ ] Valor em dinheiro, pix, credito e debito
 - Lembretes
   - [ ] Adicionar lembretes
@@ -27,10 +27,10 @@
   - [ ] Media de vendas por dia, mês, ano
   - [ ] Tipos de venda (dinheiro, pix, credito, debito) por dia, mes, ano
 - Outros
-  - [ ] Mostrar data e hora
+  - [x] Mostrar data e hora
   - [ ] Aviso de confimação de alteração e exclusão
   
 ## View
-- ![image](https://user-images.githubusercontent.com/101655473/180118406-6e19be53-562b-4d3e-afef-1cf9c333dc64.png)
+- ![image](https://user-images.githubusercontent.com/101655473/180612814-5eaa5ff3-001c-48a7-9d65-f4a32e7ac59f.png)
 
 [Documento Inicial](https://docs.google.com/document/d/1edeDDkZ-oRDEz9c54QUCGcl8Gay0pmKi7bFG255GBXk/edit?usp=sharing)
