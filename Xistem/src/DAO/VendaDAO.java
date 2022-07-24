@@ -89,6 +89,63 @@ public class VendaDAO {
         return lista;
     }
     
+    public ArrayList<String> listaAnos(){
+        ArrayList<String> listaDistinta = new ArrayList<>();
+        String sql = "select distinct year(data_hora) from venda;";
+        conn = new Conexao().conectaBD();
+        
+        try {
+            pstm = conn.prepareStatement(sql);
+            rs = pstm.executeQuery();
+            
+            while (rs.next()){
+                listaDistinta.add(rs.getString("YEAR(data_hora)"));
+            }
+  
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "VendaDAO listaAnos "+ erro);
+        }
+        return listaDistinta;
+    }
+    
+    public ArrayList<String> listaMeses(){
+        ArrayList<String> listaDistinta = new ArrayList<>();
+        String sql = "select distinct year(data_hora), month(data_hora) from venda;";
+        conn = new Conexao().conectaBD();
+        
+        try {
+            pstm = conn.prepareStatement(sql);
+            rs = pstm.executeQuery();
+            
+            while (rs.next()){
+                listaDistinta.add(rs.getString("MONTH(data_hora)")+"/"+rs.getString("YEAR(data_hora)"));
+            }
+  
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "VendaDAO listaAnos "+ erro);
+        }
+        return listaDistinta;
+    }
+    
+    public ArrayList<String> listaDias(){
+        ArrayList<String> listaDistinta = new ArrayList<>();
+        String sql = "select distinct year(data_hora), month(data_hora), day(data_hora) from venda;";
+        conn = new Conexao().conectaBD();
+        
+        try {
+            pstm = conn.prepareStatement(sql);
+            rs = pstm.executeQuery();
+            
+            while (rs.next()){
+                listaDistinta.add(rs.getString("DAY(data_hora)")+"/"+rs.getString("MONTH(data_hora)")+"/"+rs.getString("YEAR(data_hora)"));
+            }
+  
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "VendaDAO listaAnos "+ erro);
+        }
+        return listaDistinta;
+    }
+    
     
     public void excluirVenda(VendaDTO objvendadto){
         String sql = "delete from venda where id = ?";
@@ -124,5 +181,7 @@ public class VendaDAO {
         } catch (SQLException erro) {
         }
     }
+    
+    
     
 }
