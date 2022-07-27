@@ -11,6 +11,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import DTO.VendaDTO;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class VendaDAO {
@@ -18,7 +21,7 @@ public class VendaDAO {
     PreparedStatement pstm;
     ResultSet rs;
     ArrayList<VendaDTO> lista = new ArrayList<>();
-    
+       
     public void novaVenda(VendaDTO objvendadto){
         String sql = "insert into venda (venda, valor, tipo_pag) values (?, ?, ?)";
         conn = new Conexao().conectaBD();
@@ -89,8 +92,10 @@ public class VendaDAO {
         return lista;
     }
     
-    public ArrayList<String> listaAnos(){
+    public ArrayList<String> listaAnos() throws ParseException{
         ArrayList<String> listaDistinta = new ArrayList<>();
+        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+        
         String sql = "select distinct year(data_hora) from venda;";
         conn = new Conexao().conectaBD();
         
@@ -100,6 +105,9 @@ public class VendaDAO {
             
             while (rs.next()){
                 listaDistinta.add(rs.getString("YEAR(data_hora)"));
+                //Date data = sdf.parse(rs.getString("YEAR(data_hora)"));
+                //System.out.println(sdf.format(data.getTime()));
+                //listaDistinta.add(data)
             }
   
         } catch (SQLException erro) {
@@ -109,7 +117,7 @@ public class VendaDAO {
     }
     
     public ArrayList<String> listaMeses(){
-        ArrayList<String> listaDistinta = new ArrayList<>();
+        ArrayList<String> listaDistinta = new ArrayList<>();      
         String sql = "select distinct year(data_hora), month(data_hora) from venda;";
         conn = new Conexao().conectaBD();
         
@@ -129,6 +137,8 @@ public class VendaDAO {
     
     public ArrayList<String> listaDias(){
         ArrayList<String> listaDistinta = new ArrayList<>();
+        
+        
         String sql = "select distinct year(data_hora), month(data_hora), day(data_hora) from venda;";
         conn = new Conexao().conectaBD();
         
@@ -181,7 +191,5 @@ public class VendaDAO {
         } catch (SQLException erro) {
         }
     }
-    
-    
-    
+      
 }

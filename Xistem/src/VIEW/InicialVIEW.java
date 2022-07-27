@@ -6,7 +6,11 @@ package VIEW;
 
 import DAO.VendaDAO;
 import DTO.VendaDTO;
+import java.awt.Component;
+import java.awt.MenuItem;
+import java.awt.Point;
 import java.awt.event.KeyEvent;
+import static java.lang.System.out;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -17,6 +21,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.lang.model.util.SimpleAnnotationValueVisitor14;
 import javax.swing.JOptionPane;
+import javax.swing.JPopupMenu;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
 
@@ -46,6 +51,8 @@ public class InicialVIEW extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popTest = new javax.swing.JPopupMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         comboTipoPag = new javax.swing.JComboBox<>();
@@ -109,6 +116,13 @@ public class InicialVIEW extends javax.swing.JFrame {
         comboEstatisticasMes = new javax.swing.JComboBox<>();
         comboEstatisticasDia = new javax.swing.JComboBox<>();
 
+        popTest.setEnabled(false);
+        popTest.setMaximumSize(new java.awt.Dimension(6, 6));
+        popTest.setName("impressão"); // NOI18N
+
+        jMenuItem1.setText("jMenuItem1");
+        popTest.add(jMenuItem1);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -129,6 +143,13 @@ public class InicialVIEW extends javax.swing.JFrame {
             }
         });
 
+        txtVenda.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                txtVendaInputMethodTextChanged(evt);
+            }
+        });
         txtVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtVendaActionPerformed(evt);
@@ -137,6 +158,9 @@ public class InicialVIEW extends javax.swing.JFrame {
         txtVenda.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtVendaKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtVendaKeyTyped(evt);
             }
         });
 
@@ -168,11 +192,6 @@ public class InicialVIEW extends javax.swing.JFrame {
             }
         ));
         tabelaVendas.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
-        tabelaVendas.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                tabelaVendasMouseMoved(evt);
-            }
-        });
         tabelaVendas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tabelaVendasMouseClicked(evt);
@@ -312,7 +331,7 @@ public class InicialVIEW extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
@@ -331,7 +350,7 @@ public class InicialVIEW extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtValor)
+                                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(comboTipoPag, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -377,7 +396,7 @@ public class InicialVIEW extends javax.swing.JFrame {
                             .addComponent(txtDebito, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCredito, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(btnFinalizarVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -583,11 +602,6 @@ public class InicialVIEW extends javax.swing.JFrame {
         btnEstatisticasTudo.setText("Tudo");
 
         comboEstatisticasAno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ano" }));
-        comboEstatisticasAno.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                comboEstatisticasAnoMouseClicked(evt);
-            }
-        });
         comboEstatisticasAno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboEstatisticasAnoActionPerformed(evt);
@@ -743,10 +757,6 @@ public class InicialVIEW extends javax.swing.JFrame {
         CarregarCamposVenda();
     }//GEN-LAST:event_tabelaVendasMouseClicked
 
-    private void tabelaVendasMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaVendasMouseMoved
-        
-    }//GEN-LAST:event_tabelaVendasMouseMoved
-
     private void txtIdVenda2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdVenda2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdVenda2ActionPerformed
@@ -798,8 +808,15 @@ public class InicialVIEW extends javax.swing.JFrame {
 
     private void txtVendaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVendaKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER){
-           txtValor.requestFocus();
-        } 
+            txtValor.requestFocus();
+            popTest.setVisible(false);
+            txtValor.selectAll();
+        }else if (evt.getKeyCode()== KeyEvent.VK_CONTROL){
+            System.out.println(popTest.getName());
+            txtVenda.setText(popTest.getName());
+            popTest.setVisible(false);
+            txtValor.requestFocus();
+        }
     }//GEN-LAST:event_txtVendaKeyPressed
 
     private void txtValorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtValorKeyPressed
@@ -831,9 +848,21 @@ public class InicialVIEW extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tabelaVendasKeyPressed
 
-    private void comboEstatisticasAnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboEstatisticasAnoMouseClicked
+    private void txtVendaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVendaKeyTyped
+        //System.out.println(txtVenda.getText());
+        if (evt.getKeyChar()== KeyEvent.VK_ENTER){
+            txtValor.requestFocus();
+            
+        }else{
+            if(txtVenda.getText().length() > 1){
+                VerificaVenda(txtVenda.getText());
+            }else{popTest.setVisible(false);} 
+        } 
+    }//GEN-LAST:event_txtVendaKeyTyped
+
+    private void txtVendaInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_txtVendaInputMethodTextChanged
         
-    }//GEN-LAST:event_comboEstatisticasAnoMouseClicked
+    }//GEN-LAST:event_txtVendaInputMethodTextChanged
 
     /**
      * @param args the command line arguments
@@ -906,12 +935,14 @@ public class InicialVIEW extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPopupMenu popTest;
     private javax.swing.JTable tabelaVendas;
     private javax.swing.JTable tabelaVendasGeral;
     private javax.swing.JTextField txtCredito;
@@ -934,7 +965,32 @@ public class InicialVIEW extends javax.swing.JFrame {
     private javax.swing.JTextField txtVenda1;
     private javax.swing.JTextField txtVenda2;
     // End of variables declaration//GEN-END:variables
-    
+
+    private void VerificaVenda(String entrada){
+        
+        popTest.show(txtVenda, txtVenda.getX(), txtVenda.getY()-38);
+
+        popTest.removeAll();
+        String[] lista = {"impressão", "xerox", "pesquisa", "topo de bolo", "balão", "vela", 
+                        "emplastificação", "caneta", "serviço digital", "fone de ouvido","folha de papel",
+                        "papel de presente", "sacolinha"};
+        
+        for(String i:lista){
+            System.out.println(entrada);
+            if(i.contains(entrada)){
+                System.out.println("É esse aqui meno: "+i);
+                popTest.setName(i);
+                popTest.add(i);
+                popTest.setVisible(false);               
+            }
+        } 
+        if(popTest.getComponentCount() == 0){
+            popTest.setVisible(false);
+        }
+        popTest.setVisible(true);
+        txtVenda.requestFocus();
+   } 
+   
     private void LimparCampos1(){
         txtValor.setText("");
         txtVenda.setText("");
@@ -1029,8 +1085,6 @@ public class InicialVIEW extends javax.swing.JFrame {
         }
     }
     
-    
-    
     private void ListarVendasHoje(){
         try{
             VendaDAO objvendadao = new VendaDAO();
@@ -1103,7 +1157,6 @@ public class InicialVIEW extends javax.swing.JFrame {
     
     private void CarregarCamposVenda(){
         int setar = tabelaVendas.getSelectedRow();
-        
         txtIdVenda1.setText(tabelaVendas.getModel().getValueAt(setar, 0).toString());
         txtDataHora.setText(tabelaVendas.getModel().getValueAt(setar, 1).toString());
         txtVenda1.setText(tabelaVendas.getModel().getValueAt(setar, 2).toString());
