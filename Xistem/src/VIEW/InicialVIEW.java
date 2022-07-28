@@ -17,6 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Formatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.lang.model.util.SimpleAnnotationValueVisitor14;
@@ -115,9 +116,26 @@ public class InicialVIEW extends javax.swing.JFrame {
         comboEstatisticasAno = new javax.swing.JComboBox<>();
         comboEstatisticasMes = new javax.swing.JComboBox<>();
         comboEstatisticasDia = new javax.swing.JComboBox<>();
+        jLabel24 = new javax.swing.JLabel();
+        txtData2 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        txtQtVendas2 = new javax.swing.JLabel();
+        txtValorTotal2 = new javax.swing.JLabel();
+        txtMedia2 = new javax.swing.JLabel();
+        txtOutros2 = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        txtDinheiro2 = new javax.swing.JTextField();
+        txtPix2 = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        txtDebito2 = new javax.swing.JTextField();
+        txtCredito2 = new javax.swing.JTextField();
 
         popTest.setEnabled(false);
-        popTest.setMaximumSize(new java.awt.Dimension(6, 6));
         popTest.setName("impressão"); // NOI18N
 
         jMenuItem1.setText("jMenuItem1");
@@ -353,23 +371,24 @@ public class InicialVIEW extends javax.swing.JFrame {
                                         .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(comboTipoPag, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel10)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtValorTotal)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel11)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtMediaValor))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(48, 48, 48)
-                            .addComponent(jLabel12)
-                            .addGap(5, 5, 5)
-                            .addComponent(txtQtdVendas)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtValorTotal)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtMediaValor))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel12)
+                                .addGap(5, 5, 5)
+                                .addComponent(txtQtdVendas))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -431,7 +450,7 @@ public class InicialVIEW extends javax.swing.JFrame {
                                                 .addGap(31, 31, 31))))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel13)
-                                        .addGap(0, 346, Short.MAX_VALUE))
+                                        .addGap(0, 366, Short.MAX_VALUE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(20, 20, 20)
                                         .addComponent(jLabel7)
@@ -476,7 +495,7 @@ public class InicialVIEW extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnExcluirVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnAtualizarVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(28, Short.MAX_VALUE))
+                        .addContainerGap(32, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -600,6 +619,11 @@ public class InicialVIEW extends javax.swing.JFrame {
         });
 
         btnEstatisticasTudo.setText("Tudo");
+        btnEstatisticasTudo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEstatisticasTudoActionPerformed(evt);
+            }
+        });
 
         comboEstatisticasAno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ano" }));
         comboEstatisticasAno.addActionListener(new java.awt.event.ActionListener() {
@@ -609,26 +633,136 @@ public class InicialVIEW extends javax.swing.JFrame {
         });
 
         comboEstatisticasMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mês" }));
+        comboEstatisticasMes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboEstatisticasMesActionPerformed(evt);
+            }
+        });
 
         comboEstatisticasDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dia" }));
+        comboEstatisticasDia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboEstatisticasDiaActionPerformed(evt);
+            }
+        });
+
+        jLabel24.setText("Data:");
+
+        txtData2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtData2.setText("00/00/0000");
+
+        jLabel26.setText("Qt. Vendas:");
+
+        jLabel27.setText("Valor Total:");
+
+        jLabel28.setText("Media:");
+
+        txtQtVendas2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtQtVendas2.setText("000");
+
+        txtValorTotal2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtValorTotal2.setText("0000,00");
+
+        txtMedia2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtMedia2.setText("0000,00");
+
+        txtOutros2.setEnabled(false);
+        txtOutros2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtOutros2ActionPerformed(evt);
+            }
+        });
+
+        jLabel32.setText("Dinheiro:");
+
+        jLabel33.setText("Pix:");
+
+        txtDinheiro2.setEnabled(false);
+
+        txtPix2.setEnabled(false);
+
+        jLabel34.setText("Outros:");
+
+        jLabel35.setText("Debito:");
+
+        jLabel36.setText("Credito:");
+
+        txtDebito2.setEnabled(false);
+
+        txtCredito2.setEnabled(false);
+        txtCredito2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCredito2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(230, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(3, 3, 3)
+                                        .addComponent(jLabel34)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtOutros2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel36)
+                                            .addComponent(jLabel35))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtDebito2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtCredito2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel32)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtDinheiro2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(25, 25, 25)
+                                        .addComponent(jLabel33)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtPix2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel28)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtMedia2))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel26)
+                                            .addComponent(jLabel27))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtValorTotal2)
+                                            .addComponent(txtQtVendas2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(15, 15, 15)))
+                        .addGap(98, 98, 98))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtData2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(113, 113, 113)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(btnEstatisticasTudo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(comboEstatisticasAno, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(comboEstatisticasAno, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(comboEstatisticasMes, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(comboEstatisticasMes, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(comboEstatisticasDia, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(comboEstatisticasDia, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel15)
@@ -662,13 +796,54 @@ public class InicialVIEW extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEstatisticasTudo)
-                    .addComponent(comboEstatisticasAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboEstatisticasMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboEstatisticasDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnEstatisticasTudo)
+                        .addComponent(comboEstatisticasAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(comboEstatisticasMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(comboEstatisticasDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel24)
+                            .addComponent(txtData2))))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel26)
+                            .addComponent(txtQtVendas2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel27)
+                            .addComponent(txtValorTotal2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel28)
+                            .addComponent(txtMedia2))
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel32)
+                            .addComponent(txtDinheiro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel33)
+                            .addComponent(txtPix2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel35)
+                            .addComponent(txtDebito2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel36)
+                            .addComponent(txtCredito2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel34)
+                            .addComponent(txtOutros2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel14)
                 .addGap(18, 18, 18)
@@ -791,7 +966,7 @@ public class InicialVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
     private void comboEstatisticasAnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboEstatisticasAnoActionPerformed
-        //System.out.println("Escolheu");
+        ListarVendasAno();
     }//GEN-LAST:event_comboEstatisticasAnoActionPerformed
 
     private void txtCreditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCreditoActionPerformed
@@ -864,6 +1039,26 @@ public class InicialVIEW extends javax.swing.JFrame {
         
     }//GEN-LAST:event_txtVendaInputMethodTextChanged
 
+    private void txtOutros2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOutros2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtOutros2ActionPerformed
+
+    private void txtCredito2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCredito2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCredito2ActionPerformed
+
+    private void comboEstatisticasDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboEstatisticasDiaActionPerformed
+        ListarVendasDia();
+    }//GEN-LAST:event_comboEstatisticasDiaActionPerformed
+
+    private void comboEstatisticasMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboEstatisticasMesActionPerformed
+        ListarVendasMes();
+    }//GEN-LAST:event_comboEstatisticasMesActionPerformed
+
+    private void btnEstatisticasTudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstatisticasTudoActionPerformed
+        ListarVendasGeral();
+    }//GEN-LAST:event_btnEstatisticasTudoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -928,7 +1123,16 @@ public class InicialVIEW extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -946,26 +1150,38 @@ public class InicialVIEW extends javax.swing.JFrame {
     private javax.swing.JTable tabelaVendas;
     private javax.swing.JTable tabelaVendasGeral;
     private javax.swing.JTextField txtCredito;
+    private javax.swing.JTextField txtCredito2;
     private javax.swing.JLabel txtData;
+    private javax.swing.JLabel txtData2;
     private javax.swing.JTextField txtDataHora;
     private javax.swing.JTextField txtDataHora2;
     private javax.swing.JTextField txtDebito;
+    private javax.swing.JTextField txtDebito2;
     private javax.swing.JTextField txtDinheiro;
+    private javax.swing.JTextField txtDinheiro2;
     private javax.swing.JTextField txtIdVenda1;
     private javax.swing.JTextField txtIdVenda2;
+    private javax.swing.JLabel txtMedia2;
     private javax.swing.JLabel txtMediaValor;
     private javax.swing.JTextField txtOutros;
+    private javax.swing.JTextField txtOutros2;
     private javax.swing.JTextField txtPix;
+    private javax.swing.JTextField txtPix2;
+    private javax.swing.JLabel txtQtVendas2;
     private javax.swing.JLabel txtQtdVendas;
     private javax.swing.JFormattedTextField txtValor;
     private javax.swing.JTextField txtValor1;
     private javax.swing.JTextField txtValor2;
     private javax.swing.JLabel txtValorTotal;
+    private javax.swing.JLabel txtValorTotal2;
     private javax.swing.JTextField txtVenda;
     private javax.swing.JTextField txtVenda1;
     private javax.swing.JTextField txtVenda2;
     // End of variables declaration//GEN-END:variables
-
+    SimpleDateFormat formatAno = new SimpleDateFormat("yyyy");
+    SimpleDateFormat formatMes = new SimpleDateFormat("MM/yyyy");
+    SimpleDateFormat formatDia = new SimpleDateFormat("dd/MM/yyyy");
+    
     private void VerificaVenda(String entrada){
         
         popTest.show(txtVenda, txtVenda.getX(), txtVenda.getY()-38);
@@ -1031,53 +1247,23 @@ public class InicialVIEW extends javax.swing.JFrame {
         VendaDAO objvendadao = new VendaDAO();
         objvendadao.novaVenda(objvendadto);
     }
-    
-    private void ListarVendasGeral(){
-        try{
-            VendaDAO objvendadao = new VendaDAO();
-            
-            DefaultTableModel model = (DefaultTableModel) tabelaVendasGeral.getModel();
-            model.setNumRows(0);
-            
-            ArrayList<VendaDTO> lista = objvendadao.pesquisaVenda();
-            
-            float valorTotal = 0;
-            int qtdVendas = lista.size();
-            
-            for(int num = 0; num < lista.size(); num++){
-                model.addRow(new Object[]{
-                    lista.get(num).getId(),
-                    lista.get(num).getDataHora(),
-                    lista.get(num).getVenda(),
-                    lista.get(num).getValor(),
-                    lista.get(num).getTipoPag()    
-                }); 
-                valorTotal += lista.get(num).getValor();
-            }
-            //txtQtdVendas.setText(String.valueOf(qtdVendas));
-            //txtValorTotal.setText(String.valueOf(valorTotal));
-        }
-        catch (Exception erro) {
-            JOptionPane.showMessageDialog(null, "ListarVendas "+erro);
-        }
-    }
-    
-    
+        
     private void ListarAnosMesesDias(){
         try {
             VendaDAO objvendadao = new VendaDAO();
-            ArrayList<String> listaDistintaAnos = objvendadao.listaAnos();
-            ArrayList<String> listaDistintaMeses = objvendadao.listaMeses();
-            ArrayList<String> listaDistintaDias = objvendadao.listaDias();
+             
+            ArrayList<Date> listaDistintaAnos = objvendadao.listaAnos();
+            ArrayList<Date> listaDistintaMeses = objvendadao.listaMeses();
+            ArrayList<Date> listaDistintaDias = objvendadao.listaDias();
             
             for (int i = 0; i<listaDistintaAnos.size(); i++){
-                comboEstatisticasAno.addItem(listaDistintaAnos.get(i));
+                comboEstatisticasAno.addItem(formatAno.format(listaDistintaAnos.get(i)));
             }
             for (int i = 0; i<listaDistintaMeses.size(); i++){
-                comboEstatisticasMes.addItem(listaDistintaMeses.get(i));
+                comboEstatisticasMes.addItem(formatMes.format(listaDistintaMeses.get(i)));
             }
             for (int i = 0; i<listaDistintaDias.size(); i++){
-                comboEstatisticasDia.addItem(listaDistintaDias.get(i));
+                comboEstatisticasDia.addItem(formatDia.format(listaDistintaDias.get(i)));
             }
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(null, "ListarAnos "+erro);
@@ -1085,74 +1271,7 @@ public class InicialVIEW extends javax.swing.JFrame {
         }
     }
     
-    private void ListarVendasHoje(){
-        try{
-            VendaDAO objvendadao = new VendaDAO();
-            Calendar c = Calendar.getInstance();
-            
-            DefaultTableModel model = (DefaultTableModel) tabelaVendas.getModel();
-            model.setNumRows(0);
-            //System.out.println(c.get(Calendar.DAY_OF_MONTH) + " " +c.get(Calendar.MONTH)+1 + " " +c.get(Calendar.YEAR));
-            
-            ArrayList<VendaDTO> lista = objvendadao.pesquisaVenda(c.get(Calendar.DAY_OF_MONTH), c.get(Calendar.MONTH)+1, c.get(Calendar.YEAR));
-            
-            float valorTotal = 0;
-            float mediaValor = 0;
-            int qtdVendas = lista.size();
-            
-            float credito = 0;
-            float debito = 0;
-            float dinheiro = 0;
-            float pix = 0;
-            float outros = 0;
-            
-            for(int num = 0; num < lista.size(); num++){
-                model.addRow(new Object[]{
-                    lista.get(num).getId(),
-                    lista.get(num).getDataHora(),
-                    lista.get(num).getVenda(),
-                    lista.get(num).getValor(),
-                    lista.get(num).getTipoPag()
-                }); 
-                
-                switch (lista.get(num).getTipoPag()) {
-                    case "Dinheiro":
-                        dinheiro += lista.get(num).getValor();
-                        break;
-                    case "Pix":
-                        pix += lista.get(num).getValor();
-                        break;
-                    case "Credito":
-                        credito += lista.get(num).getValor();
-                        break;
-                    case "Debito":
-                        debito += lista.get(num).getValor();
-                        break;
-                    case "Outros":
-                        outros += lista.get(num).getValor();
-                        break;
-                    default:
-                        throw new AssertionError();
-                }
-                
-                valorTotal += lista.get(num).getValor();
-            }  
-            mediaValor = valorTotal/qtdVendas;
-            
-            txtQtdVendas.setText(String.valueOf(qtdVendas));
-            txtValorTotal.setText("R$ "+String.valueOf(valorTotal).format("%.2f",valorTotal));
-            txtMediaValor.setText("R$ "+String.valueOf(mediaValor).format("%.2f", mediaValor));
-            
-            txtDinheiro.setText(String.valueOf(dinheiro));
-            txtPix.setText(String.valueOf(pix));
-            txtCredito.setText(String.valueOf(credito));
-            txtDebito.setText(String.valueOf(debito));
-            txtOutros.setText(String.valueOf(outros));
-        }
-        catch (Exception erro) {
-            JOptionPane.showMessageDialog(null, "ListarVendas "+erro);
-        }
-    }
+    
     
     
     private void CarregarCamposVenda(){
@@ -1250,8 +1369,218 @@ public class InicialVIEW extends javax.swing.JFrame {
         VendaDAO objvendadao = new VendaDAO();
         objvendadao.alterarVenda(objvendadto);
     }
-    private void Testes(){
-        btnAtualizarVenda.transferFocus();
+    
+    private void ListarVendasHoje(){
+        try{
+            VendaDAO objvendadao = new VendaDAO();
+            Calendar c = Calendar.getInstance();
+            
+            DefaultTableModel model = (DefaultTableModel) tabelaVendas.getModel();
+            model.setNumRows(0);
+            //System.out.println(c.get(Calendar.DAY_OF_MONTH) + " " +c.get(Calendar.MONTH)+1 + " " +c.get(Calendar.YEAR));
+            
+            ArrayList<VendaDTO> lista = objvendadao.pesquisaVenda(c.get(Calendar.DAY_OF_MONTH), c.get(Calendar.MONTH)+1, c.get(Calendar.YEAR));
+            
+            float valorTotal = 0;
+        float mediaValor = 0;
+        int qtdVendas = lista.size();
+
+        float credito = 0;
+        float debito = 0;
+        float dinheiro = 0;
+        float pix = 0;
+        float outros = 0;
+        
+        for(int num = 0; num < lista.size(); num++){
+            model.addRow(new Object[]{
+                lista.get(num).getId(),
+                lista.get(num).getDataHora(),
+                lista.get(num).getVenda(),
+                lista.get(num).getValor(),
+                lista.get(num).getTipoPag()
+            }); 
+
+            switch (lista.get(num).getTipoPag()) {
+                case "Dinheiro":
+                    dinheiro += lista.get(num).getValor();
+                    break;
+                case "Pix":
+                    pix += lista.get(num).getValor();
+                    break;
+                case "Credito":
+                    credito += lista.get(num).getValor();
+                    break;
+                case "Debito":
+                    debito += lista.get(num).getValor();
+                    break;
+                case "Outros":
+                    outros += lista.get(num).getValor();
+                    break;
+                default:
+                    throw new AssertionError();
+            }
+
+            valorTotal += lista.get(num).getValor();
+        }  
+        mediaValor = valorTotal/qtdVendas;
+
+        txtQtdVendas.setText(String.valueOf(qtdVendas));
+        txtValorTotal.setText("R$ "+String.valueOf(valorTotal).format("%.2f",valorTotal));
+        txtMediaValor.setText("R$ "+String.valueOf(mediaValor).format("%.2f", mediaValor));
+
+        txtDinheiro.setText(String.valueOf(dinheiro));
+        txtPix.setText(String.valueOf(pix));
+        txtCredito.setText(String.valueOf(credito));
+        txtDebito.setText(String.valueOf(debito));
+        txtOutros.setText(String.valueOf(outros));
+            
+        }
+        catch (Exception erro) {
+            JOptionPane.showMessageDialog(null, "ListarVendasHoje "+erro);
+        }
+    }
+    
+    private void ListarVendasDia(){
+        try{
+            VendaDAO objvendadao = new VendaDAO();
+            String data = comboEstatisticasDia.getSelectedItem().toString();
+            Date date = formatDia.parse(data);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(date);
+            
+            DefaultTableModel model = (DefaultTableModel) tabelaVendasGeral.getModel();
+            model.setNumRows(0);
+            //System.out.println(c.get(Calendar.DAY_OF_MONTH) + " " +c.get(Calendar.MONTH)+1 + " " +c.get(Calendar.YEAR));
+            
+            System.out.println(calendar.get(Calendar.DAY_OF_MONTH)+"  " +calendar.get(Calendar.MONTH) +"  "+ calendar.get(Calendar.YEAR));
+            ArrayList<VendaDTO> lista = objvendadao.pesquisaVenda(calendar.get(Calendar.DAY_OF_MONTH), calendar.get(Calendar.MONTH)+1, calendar.get(Calendar.YEAR));
+            
+            
+            CarregarCamposEstatisticos(lista, model, data);
+            
+        }
+        catch (ParseException erro) {
+            JOptionPane.showMessageDialog(null, "ListarVendasDia "+erro);
+        }
+    }
+    
+    private void ListarVendasMes(){
+        try{
+            VendaDAO objvendadao = new VendaDAO();
+            String data = comboEstatisticasMes.getSelectedItem().toString();
+            Date date = formatMes.parse(data);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(date);
+            
+            DefaultTableModel model = (DefaultTableModel) tabelaVendasGeral.getModel();
+            model.setNumRows(0);
+            //System.out.println(c.get(Calendar.DAY_OF_MONTH) + " " +c.get(Calendar.MONTH)+1 + " " +c.get(Calendar.YEAR));
+            
+            System.out.println(calendar.get(Calendar.MONTH) +"  "+ calendar.get(Calendar.YEAR));
+            ArrayList<VendaDTO> lista = objvendadao.pesquisaVenda(calendar.get(Calendar.MONTH)+1, calendar.get(Calendar.YEAR));
+            
+            CarregarCamposEstatisticos(lista, model, data);           
+        }
+        catch (ParseException erro) {
+            JOptionPane.showMessageDialog(null, "ListarVendasMes "+erro);
+        }
+    }
+    
+    private void ListarVendasAno(){
+        try{
+            VendaDAO objvendadao = new VendaDAO();
+            String data = comboEstatisticasAno.getSelectedItem().toString();
+            Date date = formatAno.parse(data);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(date);
+            
+            DefaultTableModel model = (DefaultTableModel) tabelaVendasGeral.getModel();
+            model.setNumRows(0);
+            //System.out.println(c.get(Calendar.DAY_OF_MONTH) + " " +c.get(Calendar.MONTH)+1 + " " +c.get(Calendar.YEAR));
+            
+            System.out.println(calendar.get(Calendar.YEAR));
+            ArrayList<VendaDTO> lista = objvendadao.pesquisaVenda(calendar.get(Calendar.YEAR));
+            
+            
+            CarregarCamposEstatisticos(lista, model, data);           
+        }
+        catch (ParseException erro) {
+            JOptionPane.showMessageDialog(null, "ListarVendasMes "+erro);
+        }
+    }
+    
+        private void ListarVendasGeral(){
+        try{
+            VendaDAO objvendadao = new VendaDAO();
+            
+            DefaultTableModel model = (DefaultTableModel) tabelaVendasGeral.getModel();
+            model.setNumRows(0);
+            
+            ArrayList<VendaDTO> lista = objvendadao.pesquisaVenda();
+            
+            CarregarCamposEstatisticos(lista, model, "Todos as Datas");
+            
+        }
+        catch (Exception erro) {
+            JOptionPane.showMessageDialog(null, "ListarVendas "+erro);
+        }
+    }
+    
+    private void CarregarCamposEstatisticos(ArrayList<VendaDTO> lista, DefaultTableModel model, String data){
+        float valorTotal = 0;
+        float mediaValor = 0;
+        int qtdVendas = lista.size();
+
+        float credito = 0;
+        float debito = 0;
+        float dinheiro = 0;
+        float pix = 0;
+        float outros = 0;
+        
+        txtData2.setText(data);  
+        
+        for(int num = 0; num < lista.size(); num++){
+            model.addRow(new Object[]{
+                lista.get(num).getId(),
+                lista.get(num).getDataHora(),
+                lista.get(num).getVenda(),
+                lista.get(num).getValor(),
+                lista.get(num).getTipoPag()
+            }); 
+
+            switch (lista.get(num).getTipoPag()) {
+                case "Dinheiro":
+                    dinheiro += lista.get(num).getValor();
+                    break;
+                case "Pix":
+                    pix += lista.get(num).getValor();
+                    break;
+                case "Credito":
+                    credito += lista.get(num).getValor();
+                    break;
+                case "Debito":
+                    debito += lista.get(num).getValor();
+                    break;
+                case "Outros":
+                    outros += lista.get(num).getValor();
+                    break;
+                default:
+                    throw new AssertionError();
+            }
+
+            valorTotal += lista.get(num).getValor();
+        }  
+        mediaValor = valorTotal/qtdVendas;
+
+        txtQtVendas2.setText(String.valueOf(qtdVendas));
+        txtValorTotal2.setText("R$ "+String.valueOf(valorTotal).format("%.2f",valorTotal));
+        txtMedia2.setText("R$ "+String.valueOf(mediaValor).format("%.2f", mediaValor));
+
+        txtDinheiro2.setText(String.valueOf(dinheiro));
+        txtPix2.setText(String.valueOf(pix));
+        txtCredito2.setText(String.valueOf(credito));
+        txtDebito2.setText(String.valueOf(debito));
+        txtOutros2.setText(String.valueOf(outros));
     }
      
 }

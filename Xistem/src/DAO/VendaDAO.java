@@ -87,16 +87,69 @@ public class VendaDAO {
                 lista.add(objvendadto);
             }
         }catch(SQLException erro){ 
-            JOptionPane.showMessageDialog(null, "VendaDAO PesquisarVendaHj "+ erro);
+            JOptionPane.showMessageDialog(null, "VendaDAO PesquisarVendaDia "+ erro);
         }
         return lista;
     }
     
-    public ArrayList<String> listaAnos() throws ParseException{
-        ArrayList<String> listaDistinta = new ArrayList<>();
-        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+    public ArrayList<VendaDTO> pesquisaVenda(int mes, int ano){
+        String sql = "select * from venda where YEAR(data_hora) = ? and MONTH(data_hora) = ?";
+        conn = new Conexao().conectaBD();
+        
+        try{
+            pstm = conn.prepareStatement(sql);
+            pstm.setInt(1,ano);
+            pstm.setInt(2, mes);
+            rs = pstm.executeQuery();
+                  
+            while(rs.next()){
+                VendaDTO objvendadto = new VendaDTO();
+                objvendadto.setId(rs.getInt("id"));
+                objvendadto.setDataHora(rs.getString("data_hora"));
+                objvendadto.setVenda(rs.getString("venda"));
+                objvendadto.setValor(rs.getFloat("valor"));
+                objvendadto.setTipoPag(rs.getString("tipo_pag"));
+                
+                lista.add(objvendadto);
+            }
+        }catch(SQLException erro){ 
+            JOptionPane.showMessageDialog(null, "VendaDAO PesquisarVendaMes "+ erro);
+        }
+        return lista;
+    }
+    
+    public ArrayList<VendaDTO> pesquisaVenda(int ano){
+        String sql = "select * from venda where YEAR(data_hora) = ?";
+        conn = new Conexao().conectaBD();
+        
+        try{
+            pstm = conn.prepareStatement(sql);
+            pstm.setInt(1,ano);
+            rs = pstm.executeQuery();
+                  
+            while(rs.next()){
+                VendaDTO objvendadto = new VendaDTO();
+                objvendadto.setId(rs.getInt("id"));
+                objvendadto.setDataHora(rs.getString("data_hora"));
+                objvendadto.setVenda(rs.getString("venda"));
+                objvendadto.setValor(rs.getFloat("valor"));
+                objvendadto.setTipoPag(rs.getString("tipo_pag"));
+                
+                lista.add(objvendadto);
+            }
+        }catch(SQLException erro){ 
+            JOptionPane.showMessageDialog(null, "VendaDAO PesquisarVendaMes "+ erro);
+        }
+        return lista;
+    }
+    
+    public ArrayList<Date> listaAnos() throws ParseException{
+        ArrayList<Date> listaDistinta = new ArrayList<>();
+        SimpleDateFormat formatAno = new SimpleDateFormat("yyyy");
         
         String sql = "select distinct year(data_hora) from venda;";
+        Date anoFormatado;
+        
         conn = new Conexao().conectaBD();
         
         try {
@@ -104,10 +157,10 @@ public class VendaDAO {
             rs = pstm.executeQuery();
             
             while (rs.next()){
-                listaDistinta.add(rs.getString("YEAR(data_hora)"));
-                //Date data = sdf.parse(rs.getString("YEAR(data_hora)"));
-                //System.out.println(sdf.format(data.getTime()));
-                //listaDistinta.add(data)
+                anoFormatado = formatAno.parse(rs.getString("YEAR(data_hora)"));
+                
+                listaDistinta.add(anoFormatado);
+          
             }
   
         } catch (SQLException erro) {
@@ -116,9 +169,13 @@ public class VendaDAO {
         return listaDistinta;
     }
     
-    public ArrayList<String> listaMeses(){
-        ArrayList<String> listaDistinta = new ArrayList<>();      
+    public ArrayList<Date> listaMeses() throws ParseException{
+        ArrayList<Date> listaDistinta = new ArrayList<>();     //******
+        SimpleDateFormat formatMes = new SimpleDateFormat("MM/yyyy"); //******
+        
         String sql = "select distinct year(data_hora), month(data_hora) from venda;";
+        Date mesFormatado; // formatMes.parse(""); //*******
+        
         conn = new Conexao().conectaBD();
         
         try {
@@ -126,7 +183,9 @@ public class VendaDAO {
             rs = pstm.executeQuery();
             
             while (rs.next()){
-                listaDistinta.add(rs.getString("MONTH(data_hora)")+"/"+rs.getString("YEAR(data_hora)"));
+                mesFormatado = formatMes.parse(rs.getString("MONTH(data_hora)")+"/"+rs.getString("YEAR(data_hora)")); //******
+                
+                listaDistinta.add(mesFormatado);
             }
   
         } catch (SQLException erro) {
@@ -135,11 +194,13 @@ public class VendaDAO {
         return listaDistinta;
     }
     
-    public ArrayList<String> listaDias(){
-        ArrayList<String> listaDistinta = new ArrayList<>();
-        
+    public ArrayList<Date> listaDias() throws ParseException{
+        ArrayList<Date> listaDistinta = new ArrayList<>();
+        SimpleDateFormat formatDia = new SimpleDateFormat("dd/MM/yyyy");
         
         String sql = "select distinct year(data_hora), month(data_hora), day(data_hora) from venda;";
+        Date diaFormatado;
+        
         conn = new Conexao().conectaBD();
         
         try {
@@ -147,7 +208,8 @@ public class VendaDAO {
             rs = pstm.executeQuery();
             
             while (rs.next()){
-                listaDistinta.add(rs.getString("DAY(data_hora)")+"/"+rs.getString("MONTH(data_hora)")+"/"+rs.getString("YEAR(data_hora)"));
+                diaFormatado = formatDia.parse(rs.getString("DAY(data_hora)")+"/"+rs.getString("MONTH(data_hora)")+"/"+rs.getString("YEAR(data_hora)"));
+                listaDistinta.add(diaFormatado);
             }
   
         } catch (SQLException erro) {
