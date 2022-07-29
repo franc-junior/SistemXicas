@@ -40,7 +40,7 @@ public class VendaDAO {
         }
     }
     public ArrayList<VendaDTO> pesquisaVenda(){
-        String sql = "select * from venda";
+        String sql = "select * from venda order by data_hora";
         conn = new Conexao().conectaBD();
         
         try{
@@ -65,7 +65,7 @@ public class VendaDAO {
     }
     
     public ArrayList<VendaDTO> pesquisaVenda(int dia, int mes, int ano){
-        String sql = "select * from venda where YEAR(data_hora) = ? and MONTH(data_hora) = ? and DAY(data_hora) = ?";
+        String sql = "select * from venda where YEAR(data_hora) = ? and MONTH(data_hora) = ? and DAY(data_hora) = ? order by data_hora";
         conn = new Conexao().conectaBD();
         
         try{
@@ -93,7 +93,7 @@ public class VendaDAO {
     }
     
     public ArrayList<VendaDTO> pesquisaVenda(int mes, int ano){
-        String sql = "select * from venda where YEAR(data_hora) = ? and MONTH(data_hora) = ?";
+        String sql = "select * from venda where YEAR(data_hora) = ? and MONTH(data_hora) = ? order by data_hora";
         conn = new Conexao().conectaBD();
         
         try{
@@ -119,7 +119,7 @@ public class VendaDAO {
     }
     
     public ArrayList<VendaDTO> pesquisaVenda(int ano){
-        String sql = "select * from venda where YEAR(data_hora) = ?";
+        String sql = "select * from venda where YEAR(data_hora) = ? order by data_hora";
         conn = new Conexao().conectaBD();
         
         try{
@@ -147,7 +147,7 @@ public class VendaDAO {
         ArrayList<Date> listaDistinta = new ArrayList<>();
         SimpleDateFormat formatAno = new SimpleDateFormat("yyyy");
         
-        String sql = "select distinct year(data_hora) from venda;";
+        String sql = "select distinct year(data_hora) from venda order by data_hora;";
         Date anoFormatado;
         
         conn = new Conexao().conectaBD();
@@ -173,7 +173,7 @@ public class VendaDAO {
         ArrayList<Date> listaDistinta = new ArrayList<>();     //******
         SimpleDateFormat formatMes = new SimpleDateFormat("MM/yyyy"); //******
         
-        String sql = "select distinct year(data_hora), month(data_hora) from venda;";
+        String sql = "select distinct year(data_hora), month(data_hora) from venda order by data_hora;";
         Date mesFormatado; // formatMes.parse(""); //*******
         
         conn = new Conexao().conectaBD();
@@ -198,7 +198,7 @@ public class VendaDAO {
         ArrayList<Date> listaDistinta = new ArrayList<>();
         SimpleDateFormat formatDia = new SimpleDateFormat("dd/MM/yyyy");
         
-        String sql = "select distinct year(data_hora), month(data_hora), day(data_hora) from venda;";
+        String sql = "select distinct year(data_hora), month(data_hora), day(data_hora) from venda order by data_hora;";
         Date diaFormatado;
         
         conn = new Conexao().conectaBD();
