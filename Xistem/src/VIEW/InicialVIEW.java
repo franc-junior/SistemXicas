@@ -311,10 +311,14 @@ public class InicialVIEW extends javax.swing.JFrame {
 
         jLabel22.setText("Credito:");
 
-        txtValor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat(".00"))));
         txtValor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtValorMouseClicked(evt);
+            }
+        });
+        txtValor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtValorActionPerformed(evt);
             }
         });
         txtValor.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -996,7 +1000,6 @@ public class InicialVIEW extends javax.swing.JFrame {
             System.out.println(popTest.getName());
             txtVenda.setText(popTest.getName());
             popTest.setVisible(false);
-            txtValor.requestFocus();
         }
     }//GEN-LAST:event_txtVendaKeyPressed
 
@@ -1064,6 +1067,10 @@ public class InicialVIEW extends javax.swing.JFrame {
     private void btnEstatisticasTudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstatisticasTudoActionPerformed
         ListarVendasGeral();
     }//GEN-LAST:event_btnEstatisticasTudoActionPerformed
+
+    private void txtValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtValorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1389,22 +1396,22 @@ public class InicialVIEW extends javax.swing.JFrame {
             ArrayList<VendaDTO> lista = objvendadao.pesquisaVenda(c.get(Calendar.DAY_OF_MONTH), c.get(Calendar.MONTH)+1, c.get(Calendar.YEAR));
             
             float valorTotal = 0;
-        float mediaValor = 0;
-        int qtdVendas = lista.size();
+            float mediaValor = 0;
+            int qtdVendas = lista.size();
 
-        float credito = 0;
-        float debito = 0;
-        float dinheiro = 0;
-        float pix = 0;
-        float outros = 0;
-        
-        for(int num = 0; num < lista.size(); num++){
-            model.addRow(new Object[]{
-                lista.get(num).getId(),
-                lista.get(num).getDataHora(),
-                lista.get(num).getVenda(),
-                lista.get(num).getValor(),
-                lista.get(num).getTipoPag()
+            float credito = 0;
+            float debito = 0;
+            float dinheiro = 0;
+            float pix = 0;
+            float outros = 0;
+
+            for(int num = 0; num < lista.size(); num++){
+                model.addRow(new Object[]{
+                    lista.get(num).getId(),
+                    lista.get(num).getDataHora(),
+                    lista.get(num).getVenda(),
+                    lista.get(num).getValor(),
+                    lista.get(num).getTipoPag()
             }); 
 
             switch (lista.get(num).getTipoPag()) {
