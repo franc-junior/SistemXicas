@@ -1,4 +1,4 @@
-# SistemXicas
+# Sistema de venda
 ## Resumo
 - É um sistema em desenvolvimento que tem o objetivo de auxiliar as vendas de forma simples, listando todas as vendas com seus devidos valores, criando lembretes e anotações.
 - Trazer estatisticas e a possibilidade de imprimir relatorios.
@@ -22,10 +22,10 @@
   - [ ] Editar lembretes
   - [ ] Apagar lembretes
 - Estatisticas
-  - [ ] Mostrar vendas por dia, mês, ano
-  - [ ] Valor total de vendas por dia, mês, ano
-  - [ ] Media de vendas por dia, mês, ano
-  - [ ] Tipos de venda (dinheiro, pix, credito, debito) por dia, mes, ano
+  - [x] Mostrar vendas por dia, mês, ano
+  - [x] Valor total de vendas por dia, mês, ano
+  - [x] Media de vendas por dia, mês, ano
+  - [x] Tipos de venda (dinheiro, pix, credito, debito) por dia, mes, ano
 - Outros
   - [x] Mostrar data e hora
   - [ ] Aviso de confimação de alteração e exclusão
