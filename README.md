@@ -33,4 +33,8 @@
 ## View
 - ![image](https://user-images.githubusercontent.com/101655473/180612814-5eaa5ff3-001c-48a7-9d65-f4a32e7ac59f.png)
 
+
+- https://github.com/X1K00/SistemXicas/assets/101655473/b7f531bf-f8b4-4efa-9f6a-672793ddcd42
+
+
 [Documento Inicial](https://docs.google.com/document/d/1edeDDkZ-oRDEz9c54QUCGcl8Gay0pmKi7bFG255GBXk/edit?usp=sharing)
